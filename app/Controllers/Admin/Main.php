@@ -8,6 +8,6 @@ class Main extends BaseController
 {
     public function index()
     {
-        //echo __METHOD__;
+        return view('admin/main/index', ['title' => 'Main page']);
     }
 }
