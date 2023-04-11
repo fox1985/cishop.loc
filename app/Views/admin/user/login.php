@@ -21,13 +21,14 @@
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg">Sign in to start your session</p>
-
+              <!-- обработка ошибок  авторизации -->
             <?php if (session()->has('fail')): ?>
                 <div class="alert alert-danger">
                     <?= session()->getFlashdata('fail'); ?>
                 </div>
             <?php endif; ?>
-            <!-- обработка ошибок пользолателя -->
+
+            <!-- обработка ошибок  валидации -->
             <?php if (session()->has('errors')): ?>
                 <?= session()->getFlashdata('errors')->listErrors('errors_list') ?>
             <?php endif; ?>
