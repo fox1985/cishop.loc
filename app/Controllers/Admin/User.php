@@ -8,6 +8,6 @@ class User extends BaseController
 {
     public function login()
     {
-        //echo __METHOD__;
+       return view('admin/user/login', ['title' => 'Login']);
     }
 }
