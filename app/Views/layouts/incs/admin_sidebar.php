@@ -39,12 +39,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="<?= route_to('admin/test') ?>" class="nav-link <?= (base_url('admin/test') === rtrim(current_url(), '/')) ? 'active' : '' ?>">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>Test</p>
-                    </a>
-                </li>
+                
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
