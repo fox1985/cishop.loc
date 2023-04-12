@@ -19,6 +19,7 @@ class User extends BaseController
     public function login()
     {
        
+        
       
       if ($this->request->getMethod() == 'post') {
         if (!$this->validate('userLogin')) {
@@ -43,6 +44,16 @@ class User extends BaseController
 
 
        return view('admin/user/login', ['title' => 'Login']);
+    }
+
+    public function logout()
+    {
+        if(UserModel::isAdmin())
+        {
+            session()->destroy();
+        }
+
+        return redirect('admin.login');
     }
 
 

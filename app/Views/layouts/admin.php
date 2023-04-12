@@ -53,7 +53,21 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
+                   
+                    <?php if (session()->has('success')): ?>
+                            <div class="alert alert-success alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <?= session()->get('success'); ?>
+                            </div>
+                        <?php endif; ?>
 
+                        <?php if (session()->has('fail')): ?>
+                            <div class="alert alert-danger alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <?= session()->get('fail'); ?>
+                            </div>
+                        <?php endif; ?>
+                        
                     </div>
                 </div>
             </div>

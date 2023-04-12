@@ -39,6 +39,11 @@ class UserModel extends Model
         $_SESSION['user'] = $user_data;
     }
 
+    public static function isAdmin(): bool
+    {
+        return (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin');
+    }
+
 
 
 

@@ -30,12 +30,17 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-$routes->group('admin', function($routes)
+$routes->group('admin', ['filter' => 'checkauthadmin'], function($routes)
 {
     $routes->get('/','Admin\Main::index', ['as' => 'admin.main']);
+    // редактированья профиля пользолателя
+    $routes->get('user/edit/(:num)','Admin\User::edit/$1', ['as', 'admin.user.edit']);
+    $routes->get('logout', 'Admin\User::logout', ['as', 'admin.logout']);
 });
 
 $routes->match(['get', 'post'], 'admin/login','Admin\User::login', ['as' => 'admin.login']);
+
+
 
 //-----------------------------------------------------
 $routes->get('/', 'Main::index');

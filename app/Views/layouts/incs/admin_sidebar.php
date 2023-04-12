@@ -13,7 +13,8 @@
                 <img src="<?= base_url('assets/admin/dist/img/user2-160x160.jpg') ?>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="<?= route_to('admin.user.edit', $_SESSION['user']['id'])?>" class="d-block"><?= $_SESSION['user']['name']?></a>
+                <a href="<?= route_to('admin.login')?>">Выход</a>
             </div>
         </div>
 
