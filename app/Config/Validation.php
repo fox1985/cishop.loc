@@ -36,9 +36,15 @@ class Validation extends BaseConfig
     public array $templates = [
         'list'   => 'CodeIgniter\Validation\Views\list',
         'single' => 'CodeIgniter\Validation\Views\single',
+        'errors_list' => 'errors/errors_list',
     ];
 
     // --------------------------------------------------------------------
     // Rules
     // --------------------------------------------------------------------
+
+    public $userLogin = [
+        'email' => 'valid_email',
+        'password' => 'required',
+    ];
 }
