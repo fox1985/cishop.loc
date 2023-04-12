@@ -9,7 +9,7 @@ class User extends BaseController
     public function login()
     {
        if($this->request->getMethod() == 'post')
-       {
+       {     // проверка ошибки валидации
             if (!$this->validate('userLogin')) 
             {
               return redirect()->route('admin.login')->with('errors', $this->validator);
