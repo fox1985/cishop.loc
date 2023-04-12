@@ -32,7 +32,7 @@ $routes->set404Override();
 
 $routes->group('admin', function($routes)
 {
-    $routes->get('/','Admin\Main::index', ['as' => 'main.index']);
+    $routes->get('/','Admin\Main::index', ['as' => 'admin.main']);
 });
 
 $routes->match(['get', 'post'], 'admin/login','Admin\User::login', ['as' => 'admin.login']);
