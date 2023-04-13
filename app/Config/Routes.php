@@ -36,6 +36,19 @@ $routes->group('admin', ['filter' => 'checkauthadmin'], function($routes)
     // редактированья профиля пользолателя
     $routes->get('user/edit/(:num)','Admin\User::edit/$1', ['as', 'admin.user.edit']);
     $routes->get('logout', 'Admin\User::logout', ['as', 'admin.logout']);
+    //  список всех категорий 
+    $routes->get('category','Admin\Category::index', ['as' => 'admin.category']);
+    // новая  категория
+    $routes->get('category/new','Admin\Category::new', ['as' => 'admin.category.new']);
+    // добавить категорию
+    $routes->post('category/create','Admin\Category::create', ['as' => 'admin.category.create']);
+     // редактировать категорию
+     $routes->get('category/edit/(:num)','Admin\Category::edit/$1', ['as' => 'admin.category.edit']);
+     // обновить категорию
+     $routes->post('category/update/(:num)','Admin\Category::update', ['as' => 'admin.category.update']);
+    // удалить категорию
+    $routes->get('category/delete/(:num)','Admin\Category::delete/$1', ['as' => 'admin.category.delete']);
+    
 });
 
 $routes->match(['get', 'post'], 'admin/login','Admin\User::login', ['as' => 'admin.login']);

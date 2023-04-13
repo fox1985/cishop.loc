@@ -40,7 +40,14 @@
                     </a>
                 </li>
 
-                
+                <li class="nav-item">
+                    <a href="<?= route_to('admin.category'); ?>" class="nav-link <?php echo ( base_url('admin/category') === rtrim(current_url(), '/') ) ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>Категории</p>
+                    </a>
+                </li>
+
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
