@@ -22,6 +22,11 @@ class Category extends BaseController
         ->groupBy('category.id')
         ->orderBy('category.title')
         ->paginate();
-    d($categories);
+
+        return view('admin/category/index', [
+            'title' => 'Список категорий',
+            'categories' => $categories,
+            'pager' => $this->categoryModel->pager,
+        ]);
     }
 }
