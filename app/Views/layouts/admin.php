@@ -12,8 +12,20 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('assets/admin/dist/css/adminlte.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/admin/css/main.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/admin/css/main.css') ?>">
     <link rel="shortcut icon" href="<?= base_url('favicon.ico') ?>">
+
+
+    <script src="<?= base_url('assets/admin/ckeditor/ckeditor.js') ?>"></script>
+    <script src="<?= base_url('assets/admin/ckfinder/ckfinder.js') ?>"></script>
+
+    <script>
+        const baseUrl = '<?= base_url() ?>/';
+    </script>
+
+
 </head>
+
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
@@ -98,5 +110,8 @@
 <script src="<?= base_url('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 <script src="<?= base_url('assets/admin/dist/js/adminlte.min.js') ?>"></script>
 <script src="<?= base_url('assets/admin/js/main.js') ?>"></script>
+
+
+
 </body>
 </html>

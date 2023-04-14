@@ -1,0 +1,9 @@
+label.required::before {
+    content: '* ';
+    color: #F00;
+    font-weight: bold;
+}
+
+.ck-editor__editable {
+    min-height: 300px;
+}

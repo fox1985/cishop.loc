@@ -20,7 +20,7 @@ class Category extends BaseController
         ->select('category.id, category.title, COUNT(product.id) AS cnt' )
         ->join('product', 'product.category_id = category.id', 'left')
         ->groupBy('category.id')
-        ->orderBy('category.title')
+        ->orderBy('category.id')
         ->paginate();
 
         return view('admin/category/index', [
@@ -29,4 +29,29 @@ class Category extends BaseController
             'pager' => $this->categoryModel->pager,
         ]);
     }
+
+
+    public function new()
+    {
+        helper('form');
+        return view('admin/category/new', ['title' => 'Новая категория']);
+    }
+
+    
+    public function create()
+    {
+       if(!$this->categoryModel->insert($this->request->getPost()))
+       {
+         session()->setFlashdata('fail', 'Ошибка'  );
+         return redirect()->route('admin.category.new')->withInput()
+         ->with('errors', $this->categoryModel->errors());
+
+       }
+       return redirect()->route('admin.category')
+       ->with('success', 'Категория добавлена');
+
+       
+    }
+
+
 }
