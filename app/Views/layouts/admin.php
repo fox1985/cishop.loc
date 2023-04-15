@@ -19,6 +19,8 @@
     <script src="<?= base_url('assets/admin/ckeditor/ckeditor.js') ?>"></script>
     <script src="<?= base_url('assets/admin/ckfinder/ckfinder.js') ?>"></script>
 
+    <base href="<?= base_url()?>/">
+
     <script>
         const baseUrl = '<?= base_url() ?>/';
     </script>
