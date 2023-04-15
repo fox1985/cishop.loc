@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\Admin\CategoryModel;
+use App\Models\Admin\ProductModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
 class Category extends BaseController
@@ -92,6 +93,31 @@ class Category extends BaseController
         ->with('success', 'Категория сохранена');
         
       
+    }
+
+    public function delete($id)
+    {
+        $category = $this->categoryModel->find($id);
+        // Проверка есть ли категория
+        if(!$category)
+        {
+            throw PageNotFoundException::forPageNotFound();
+        }
+
+        $product = new ProductModel();
+        $products_cnt = $product->where('category_id', $id)->countAllResults();
+        
+        if($products_cnt)
+        {
+            return redirect()->route('admin.category')
+            ->with('fail', 'Невозможно удалить категории есть товары');
+        }
+        $this->categoryModel->delete($id);
+
+        return redirect()->route('admin.category')
+        ->with('success', 'Категория удалена');
+
+
     }
 
 
