@@ -17,8 +17,17 @@ class CategoryModel extends Model
         'title' => 'required'
     ];
 
-    protected $afterInsert  = [];
-   
+    protected $afterInsert  = ['setSlug'];
 
+
+   protected function setSlug(array $data)
+   {
+      if($data['id'])
+      {
+        $data['data']['slug'] = mb_url_title($data['data']['title'], '-',  
+        true). "-{$data['id']}";
+        self::update($data['id'], $data['data']);
+      } 
+   }
    
 }
