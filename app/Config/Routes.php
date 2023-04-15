@@ -45,7 +45,7 @@ $routes->group('admin', ['filter' => 'checkauthadmin'], function($routes)
      // редактировать категорию
      $routes->get('category/edit/(:num)','Admin\Category::edit/$1', ['as' => 'admin.category.edit']);
      // обновить категорию
-     $routes->post('category/update/(:num)','Admin\Category::update', ['as' => 'admin.category.update']);
+     $routes->post('category/update/(:num)','Admin\Category::update/$1', ['as' => 'admin.category.update']);
     // удалить категорию
     $routes->get('category/delete/(:num)','Admin\Category::delete/$1', ['as' => 'admin.category.delete']);
     
