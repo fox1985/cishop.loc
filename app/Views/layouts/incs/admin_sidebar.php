@@ -48,6 +48,14 @@
                 </li>
 
 
+                <li class="nav-item">
+                    <a href="<?= route_to('admin.product'); ?>" class="nav-link <?php echo ( base_url('admin/product') === rtrim(current_url(), '/') ) ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-barcode"></i>
+                        <p>Товары</p>
+                    </a>
+                </li>
+
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

@@ -48,6 +48,25 @@ $routes->group('admin', ['filter' => 'checkauthadmin'], function($routes)
      $routes->post('category/update/(:num)','Admin\Category::update/$1', ['as' => 'admin.category.update']);
     // удалить категорию
     $routes->get('category/delete/(:num)','Admin\Category::delete/$1', ['as' => 'admin.category.delete']);
+
+
+    
+    // Category
+    $routes->get('category', 'Admin\Category::index', ['as' => 'admin.category']);
+    $routes->get('category/new', 'Admin\Category::new', ['as' => 'admin.category.new']);
+    $routes->post('category/create', 'Admin\Category::create', ['as' => 'admin.category.create']);
+    $routes->get('category/edit/(:num)', 'Admin\Category::edit/$1', ['as' => 'admin.category.edit']);
+    $routes->post('category/update/(:num)', 'Admin\Category::update/$1', ['as' => 'admin.category.update']);
+    $routes->get('category/delete/(:num)', 'Admin\Category::delete/$1', ['as' => 'admin.category.delete']);
+
+    // Product
+    $routes->get('product', 'Admin\Product::index', ['as' => 'admin.product']);
+    $routes->get('product/new', 'Admin\Product::new', ['as' => 'admin.product.new']);
+    $routes->post('product/create', 'Admin\Product::create', ['as' => 'admin.product.create']);
+    $routes->get('product/edit/(:num)', 'Admin\Product::edit/$1', ['as' => 'admin.product.edit']);
+    $routes->post('product/update/(:num)', 'Admin\Product::update/$1', ['as' => 'admin.product.update']);
+    $routes->get('product/delete/(:num)', 'Admin\Product::delete/$1', ['as' => 'admin.product.delete']);
+
     
 });
 
